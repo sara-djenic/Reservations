@@ -1,0 +1,34 @@
+﻿@model Ispit_asp.ViewModels.NewCourtViewModel
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+
+@{
+    ViewBag.Title = "Courts";
+
+
+}
+
+<h2>Create Court:</h2>
+
+@using (Html.BeginForm("Create", "Courts"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Court.Name)
+        @Html.TextBoxFor(m => m.Court.Name)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Court.CourtTypeId)
+        @Html.DropDownListFor(m => m.Court.CourtTypeId, new SelectList(Model.CourtTypes, "Id", "Type"), "Select court type")
+
+    </div>
+    @Html.HiddenFor(m => m.Court.CourtId)
+
+    <button type="submit">Save</button>
+}
+
