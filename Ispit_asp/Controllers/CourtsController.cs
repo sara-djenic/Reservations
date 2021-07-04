@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity;
 
 namespace Ispit_asp.Controllers
 {
@@ -22,11 +23,11 @@ namespace Ispit_asp.Controllers
             _context.Dispose();
         }
 
-        // GET: Courts
-        public ActionResult Index()
+        // GET: Courts CRUD
+        public ViewResult Index()
         {
-            var courts = _context.Courts.ToList();
-
+            var courts = _context.Courts.Include(c => c.CourtType).ToList();
+            
             return View(courts);
         }
 
@@ -45,6 +46,47 @@ namespace Ispit_asp.Controllers
         {
             _context.Courts.Add(newModel.Court);
             _context.SaveChanges();
+            return RedirectToAction("Index", "Courts");
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var court = _context.Courts.SingleOrDefault(c => c.CourtId == id);
+
+            if (court == null)
+                return HttpNotFound();
+
+            var courtEdit = new NewCourtViewModel()
+            {
+                Court = court,
+                CourtTypes = _context.CourtTypes.ToList()
+            };
+
+            return View(courtEdit);
+        }
+        [HttpPost]
+        public ActionResult Edit(NewCourtViewModel newModel)
+        {
+            var courtEdited = _context.Courts.SingleOrDefault(c => c.CourtId == newModel.Court.CourtId);
+
+            courtEdited.Name = newModel.Court.Name;
+            courtEdited.CourtTypeId = newModel.Court.CourtTypeId;
+
+            _context.SaveChanges();
+            
+            return RedirectToAction("Index", "Courts");
+        }
+
+        public ActionResult Delete(NewCourtViewModel newModel)
+        {
+            var courtDeleted = _context.Courts.SingleOrDefault(c => c.CourtId == newModel.Court.CourtId);
+
+            if (courtDeleted == null)
+                return HttpNotFound();
+
+            _context.Courts.Remove(courtDeleted);
+            _context.SaveChanges();
+
             return RedirectToAction("Index", "Courts");
         }
 
