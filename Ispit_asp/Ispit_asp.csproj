@@ -202,6 +202,10 @@
     <Compile Include="Migrations\202107051403599_Something.Designer.cs">
       <DependentUpon>202107051403599_Something.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107052133076_SeedUsers.cs" />
+    <Compile Include="Migrations\202107052133076_SeedUsers.Designer.cs">
+      <DependentUpon>202107052133076_SeedUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Court.cs" />
@@ -272,6 +276,7 @@
     <Content Include="Views\Courts\Create.cshtml" />
     <Content Include="Views\Courts\Index.cshtml" />
     <Content Include="Views\Courts\Edit.cshtml" />
+    <Content Include="Views\Courts\ReadOnlyList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -310,6 +315,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107051403599_Something.resx">
       <DependentUpon>202107051403599_Something.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107052133076_SeedUsers.resx">
+      <DependentUpon>202107052133076_SeedUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

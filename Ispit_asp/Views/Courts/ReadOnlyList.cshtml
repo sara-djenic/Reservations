@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Ispit_asp.Models.Court>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Courts:</h2>
+
+@if (!Model.Any())
+{
+    <p>We don't have any courts yet.</p>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Court</th>
+                <th>Court type</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var court in Model)
+            {
+                <tr>
+                    <td>
+                        @court.Name
+                    </td>
+                    <td>@court.CourtType.Type</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+

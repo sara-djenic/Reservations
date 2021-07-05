@@ -24,13 +24,20 @@ namespace Ispit_asp.Controllers
         }
 
         // GET: Courts CRUD
+        [AllowAnonymous]
         public ViewResult Index()
         {
             var courts = _context.Courts.Include(c => c.CourtType).ToList();
-            
-            return View(courts);
+
+            if (User.IsInRole("admin"))
+            {
+                return View(courts);
+            }
+
+            return View("ReadOnlyList", courts);
         }
 
+        [Authorize(Roles ="admin")]
         public ActionResult Create()
         {
             var courtTypes = _context.CourtTypes.ToList();

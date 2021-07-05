@@ -114,3 +114,4 @@ C:\Users\Sara\source\repos\Ispit_asp\Ispit_asp\obj\Debug\Ispit_asp.Migrations.Ch
 C:\Users\Sara\source\repos\Ispit_asp\Ispit_asp\obj\Debug\Ispit_asp.Migrations.ChangeIdName2.resources
 C:\Users\Sara\source\repos\Ispit_asp\Ispit_asp\obj\Debug\Ispit_asp.Migrations.ManyToMany.resources
 C:\Users\Sara\source\repos\Ispit_asp\Ispit_asp\obj\Debug\Ispit_asp.Migrations.Something.resources
+C:\Users\Sara\source\repos\Ispit_asp\Ispit_asp\obj\Debug\Ispit_asp.Migrations.SeedUsers.resources
