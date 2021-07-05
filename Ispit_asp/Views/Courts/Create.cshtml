@@ -28,8 +28,8 @@
         @Html.DropDownListFor(m => m.Court.CourtTypeId, new SelectList(Model.CourtTypes, "Id", "Type"), "Select court type")
         @Html.ValidationMessageFor(m => m.Court.CourtTypeId)
     </div>
-    
 
+    @Html.AntiForgeryToken()
     <button type="submit">Save</button>
 }
 

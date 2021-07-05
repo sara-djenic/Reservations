@@ -20,7 +20,7 @@
 
     </div>
     @Html.HiddenFor(m => m.Court.CourtId)
-
+    @Html.AntiForgeryToken()
     <button type="submit">Save</button>
 }
 
@@ -28,6 +28,12 @@
 {
     @Html.HiddenFor(m => m.Court.CourtId)
     <p>
+        @Html.AntiForgeryToken()
         <button type="submit">Delete</button>
     </p>
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
 }

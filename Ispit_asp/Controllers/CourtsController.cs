@@ -42,6 +42,7 @@ namespace Ispit_asp.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(NewCourtViewModel newModel)
         {
 
@@ -75,7 +76,9 @@ namespace Ispit_asp.Controllers
 
             return View(courtEdit);
         }
+
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Edit(NewCourtViewModel newModel)
         {
             if (!ModelState.IsValid)
@@ -93,6 +96,7 @@ namespace Ispit_asp.Controllers
             return RedirectToAction("Index", "Courts");
         }
 
+        [ValidateAntiForgeryToken]
         public ActionResult Delete(NewCourtViewModel newModel)
         {
             var courtDeleted = _context.Courts.SingleOrDefault(c => c.CourtId == newModel.Court.CourtId);
