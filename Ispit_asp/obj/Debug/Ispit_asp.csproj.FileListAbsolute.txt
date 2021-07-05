@@ -112,3 +112,5 @@ C:\Users\Sara\source\repos\Ispit_asp\Ispit_asp\obj\Debug\Ispit_asp.Migrations.Ad
 C:\Users\Sara\source\repos\Ispit_asp\Ispit_asp\obj\Debug\Ispit_asp.Migrations.PopulateCourtTypes.resources
 C:\Users\Sara\source\repos\Ispit_asp\Ispit_asp\obj\Debug\Ispit_asp.Migrations.ChangeIdName.resources
 C:\Users\Sara\source\repos\Ispit_asp\Ispit_asp\obj\Debug\Ispit_asp.Migrations.ChangeIdName2.resources
+C:\Users\Sara\source\repos\Ispit_asp\Ispit_asp\obj\Debug\Ispit_asp.Migrations.ManyToMany.resources
+C:\Users\Sara\source\repos\Ispit_asp\Ispit_asp\obj\Debug\Ispit_asp.Migrations.Something.resources

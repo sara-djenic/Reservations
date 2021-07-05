@@ -20,14 +20,15 @@
     <div class="form-group">
         @Html.LabelFor(m => m.Court.Name)
         @Html.TextBoxFor(m => m.Court.Name)
+        @Html.ValidationMessageFor(m => m.Court.Name)
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(m => m.Court.CourtTypeId)
+        @Html.LabelFor(m => m.Court.CourtType.Type)
         @Html.DropDownListFor(m => m.Court.CourtTypeId, new SelectList(Model.CourtTypes, "Id", "Type"), "Select court type")
-
+        @Html.ValidationMessageFor(m => m.Court.CourtTypeId)
     </div>
-    @Html.HiddenFor(m => m.Court.CourtId)
+    
 
     <button type="submit">Save</button>
 }

@@ -23,6 +23,8 @@ namespace Ispit_asp.Models
         //tabele:
         public DbSet<Court> Courts { get; set; }
         public DbSet<CourtType> CourtTypes { get; set; }
+
+        public DbSet<Customer> Customers { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

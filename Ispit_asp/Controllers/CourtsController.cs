@@ -44,6 +44,17 @@ namespace Ispit_asp.Controllers
         [HttpPost]
         public ActionResult Create(NewCourtViewModel newModel)
         {
+
+            if (!ModelState.IsValid)
+            {
+                var courtTypes = _context.CourtTypes.ToList();
+                var courtViewModel = new NewCourtViewModel
+                {
+                    CourtTypes = courtTypes,
+                };
+                return View("Create", courtViewModel);
+            }
+
             _context.Courts.Add(newModel.Court);
             _context.SaveChanges();
             return RedirectToAction("Index", "Courts");
@@ -67,6 +78,11 @@ namespace Ispit_asp.Controllers
         [HttpPost]
         public ActionResult Edit(NewCourtViewModel newModel)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("Edit", newModel);
+            }
+
             var courtEdited = _context.Courts.SingleOrDefault(c => c.CourtId == newModel.Court.CourtId);
 
             courtEdited.Name = newModel.Court.Name;

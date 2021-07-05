@@ -194,10 +194,19 @@
     <Compile Include="Migrations\202107032019084_ChangeIdName2.Designer.cs">
       <DependentUpon>202107032019084_ChangeIdName2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107050026409_ManyToMany.cs" />
+    <Compile Include="Migrations\202107050026409_ManyToMany.Designer.cs">
+      <DependentUpon>202107050026409_ManyToMany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107051403599_Something.cs" />
+    <Compile Include="Migrations\202107051403599_Something.Designer.cs">
+      <DependentUpon>202107051403599_Something.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Court.cs" />
     <Compile Include="Models\CourtType.cs" />
+    <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -295,6 +304,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107032019084_ChangeIdName2.resx">
       <DependentUpon>202107032019084_ChangeIdName2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107050026409_ManyToMany.resx">
+      <DependentUpon>202107050026409_ManyToMany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107051403599_Something.resx">
+      <DependentUpon>202107051403599_Something.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
