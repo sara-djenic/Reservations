@@ -33,7 +33,7 @@ namespace Ispit_asp.Controllers
             {
                 return View(courts);
             }
-
+            //User.IsInRole("user") -> vrati drugi view
             return View("ReadOnlyList", courts);
         }
 
@@ -68,6 +68,7 @@ namespace Ispit_asp.Controllers
             return RedirectToAction("Index", "Courts");
         }
 
+        [Authorize(Roles = "admin")]
         public ActionResult Edit(int id)
         {
             var court = _context.Courts.SingleOrDefault(c => c.CourtId == id);

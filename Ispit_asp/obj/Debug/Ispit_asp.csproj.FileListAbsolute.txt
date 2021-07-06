@@ -115,3 +115,6 @@ C:\Users\Sara\source\repos\Ispit_asp\Ispit_asp\obj\Debug\Ispit_asp.Migrations.Ch
 C:\Users\Sara\source\repos\Ispit_asp\Ispit_asp\obj\Debug\Ispit_asp.Migrations.ManyToMany.resources
 C:\Users\Sara\source\repos\Ispit_asp\Ispit_asp\obj\Debug\Ispit_asp.Migrations.Something.resources
 C:\Users\Sara\source\repos\Ispit_asp\Ispit_asp\obj\Debug\Ispit_asp.Migrations.SeedUsers.resources
+C:\Users\Sara\source\repos\Ispit_asp\Ispit_asp\obj\Debug\Ispit_asp.Migrations.ManyToMany1.resources
+C:\Users\Sara\source\repos\Ispit_asp\Ispit_asp\obj\Debug\Ispit_asp.Migrations.ModelCustomerChange.resources
+C:\Users\Sara\source\repos\Ispit_asp\Ispit_asp\obj\Debug\Ispit_asp.Migrations.ModelCustomerChange1.resources

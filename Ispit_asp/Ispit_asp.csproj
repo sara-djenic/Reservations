@@ -169,6 +169,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CourtsController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -206,6 +207,18 @@
     <Compile Include="Migrations\202107052133076_SeedUsers.Designer.cs">
       <DependentUpon>202107052133076_SeedUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107061303106_ManyToMany1.cs" />
+    <Compile Include="Migrations\202107061303106_ManyToMany1.Designer.cs">
+      <DependentUpon>202107061303106_ManyToMany1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107061614061_ModelCustomerChange.cs" />
+    <Compile Include="Migrations\202107061614061_ModelCustomerChange.Designer.cs">
+      <DependentUpon>202107061614061_ModelCustomerChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107061626097_ModelCustomerChange1.cs" />
+    <Compile Include="Migrations\202107061626097_ModelCustomerChange1.Designer.cs">
+      <DependentUpon>202107061626097_ModelCustomerChange1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Court.cs" />
@@ -213,6 +226,7 @@
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Reservation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\NewCourtViewModel.cs" />
@@ -277,6 +291,9 @@
     <Content Include="Views\Courts\Index.cshtml" />
     <Content Include="Views\Courts\Edit.cshtml" />
     <Content Include="Views\Courts\ReadOnlyList.cshtml" />
+    <Content Include="Views\Customer\Create.cshtml" />
+    <Content Include="Views\Customer\Edit.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -318,6 +335,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107052133076_SeedUsers.resx">
       <DependentUpon>202107052133076_SeedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107061303106_ManyToMany1.resx">
+      <DependentUpon>202107061303106_ManyToMany1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107061614061_ModelCustomerChange.resx">
+      <DependentUpon>202107061614061_ModelCustomerChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107061626097_ModelCustomerChange1.resx">
+      <DependentUpon>202107061626097_ModelCustomerChange1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

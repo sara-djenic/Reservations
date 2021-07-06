@@ -25,6 +25,8 @@ namespace Ispit_asp.Models
         public DbSet<CourtType> CourtTypes { get; set; }
 
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<Reservation> Reservations { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

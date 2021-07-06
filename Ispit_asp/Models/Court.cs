@@ -16,6 +16,6 @@ namespace Ispit_asp.Models
         public CourtType CourtType { get; set; }
         public byte CourtTypeId { get; set; }
 
-        public ICollection<Customer> Customers { get; set; }
+        public virtual ICollection<Reservation> Reservations { get; set; }
     }
 }
