@@ -19,6 +19,7 @@
         @Html.DropDownListFor(m => m.Court.CourtTypeId, new SelectList(Model.CourtTypes, "Id", "Type"), "Select court type")
 
     </div>
+
     @Html.HiddenFor(m => m.Court.CourtId)
     @Html.AntiForgeryToken()
     <button type="submit">Save</button>

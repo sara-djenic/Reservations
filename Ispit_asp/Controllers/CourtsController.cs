@@ -33,7 +33,12 @@ namespace Ispit_asp.Controllers
             {
                 return View(courts);
             }
-            //User.IsInRole("user") -> vrati drugi view
+
+            else if(User.Identity.IsAuthenticated)
+            {
+                return View("ForReservations", courts);
+            }
+            
             return View("ReadOnlyList", courts);
         }
 

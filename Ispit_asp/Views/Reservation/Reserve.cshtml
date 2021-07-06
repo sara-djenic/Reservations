@@ -1,0 +1,25 @@
+﻿@model Ispit_asp.ViewModels.NewReservationViewModel
+@{
+    ViewBag.Title = "Reservations";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Reservation:</h2>
+
+@using (Html.BeginForm("Reservations", "Courts"))
+{
+    <div class="form-group">
+        <label asp-for="TimeSlots" class="control-label"></label>
+        <select asp-for="TimeSlots"
+                class="form-control"
+                asp-items="Html.GetEnumSelectList<TimeSlots>()">
+            <option>Select type ...</option>
+        </select>
+       
+    </div>
+
+
+    @Html.AntiForgeryToken()
+    <button type="submit">Save</button>
+}
+
