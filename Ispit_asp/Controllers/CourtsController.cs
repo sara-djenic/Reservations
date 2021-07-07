@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
+using PagedList;
 
 namespace Ispit_asp.Controllers
 {
@@ -25,8 +26,9 @@ namespace Ispit_asp.Controllers
 
         // GET: Courts CRUD
         [AllowAnonymous]
-        public ViewResult Index()
+        public ViewResult Index(string sortOrder, string searchString, string currentFilter, int? page)
         {
+
             var courts = _context.Courts.Include(c => c.CourtType).ToList();
 
             if (User.IsInRole("admin"))
@@ -38,8 +40,48 @@ namespace Ispit_asp.Controllers
             {
                 return View("ForReservations", courts);
             }
+
+            else
+            {
+                ViewBag.CurrentSort = sortOrder;
+                ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+
+                if (searchString != null)
+                {
+                    page = 1;
+                }
+                else
+                {
+                    searchString = currentFilter;
+                }
+
+                ViewBag.CurrentFilter = searchString;
+
+                var courtsSort = from c in _context.Courts select c;
+
+                if (!String.IsNullOrEmpty(searchString))
+                {
+                    courtsSort = courtsSort.Where(s => s.Name.Contains(searchString));
+
+                }
+
+                switch (sortOrder)
+                {
+                    case "name_desc":
+                        courtsSort = courtsSort.OrderByDescending(s => s.Name);
+                        break;
+                    default:
+                        courtsSort = courtsSort.OrderBy(s => s.CourtId);
+                        break;
+                }
+
+                int pageSize = 3;
+                int pageNumber = (page ?? 1);
+
+                return View("ReadOnlyList", courtsSort.ToPagedList(pageNumber, pageSize));
+            }    
             
-            return View("ReadOnlyList", courts);
+            
         }
 
         [Authorize(Roles ="admin")]

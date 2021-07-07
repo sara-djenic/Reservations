@@ -1,4 +1,6 @@
-﻿@model IEnumerable<Ispit_asp.Models.Court>
+﻿@model PagedList.IPagedList<Ispit_asp.Models.Court>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -12,12 +14,25 @@
 }
 else
 {
+    using (Html.BeginForm("Index", "Courts", FormMethod.Get))
+    {
+        <p>
+            Find by name:  @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+            <input type="submit" value="Search" />
+        </p>
+    }
     <table class="table table-bordered table-hover">
         <thead>
             <tr>
-                <th>Court</th>
-                <th>Court type</th>
+                <th>
+                    @Html.ActionLink("Name", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+                </th>
+                <th>
+                    Court Type:
+                </th>
+
             </tr>
+
         </thead>
         <tbody>
             @foreach (var court in Model)
@@ -32,4 +47,10 @@ else
         </tbody>
     </table>
 }
+    <br />
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Index",
+        new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+    
 

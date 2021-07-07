@@ -118,3 +118,7 @@ C:\Users\Sara\source\repos\Ispit_asp\Ispit_asp\obj\Debug\Ispit_asp.Migrations.Se
 C:\Users\Sara\source\repos\Ispit_asp\Ispit_asp\obj\Debug\Ispit_asp.Migrations.ManyToMany1.resources
 C:\Users\Sara\source\repos\Ispit_asp\Ispit_asp\obj\Debug\Ispit_asp.Migrations.ModelCustomerChange.resources
 C:\Users\Sara\source\repos\Ispit_asp\Ispit_asp\obj\Debug\Ispit_asp.Migrations.ModelCustomerChange1.resources
+C:\Users\Sara\source\repos\Ispit_asp\Ispit_asp\bin\PagedList.dll
+C:\Users\Sara\source\repos\Ispit_asp\Ispit_asp\bin\PagedList.Mvc.dll
+C:\Users\Sara\source\repos\Ispit_asp\Ispit_asp\bin\PagedList.xml
+C:\Users\Sara\source\repos\Ispit_asp\Ispit_asp\bin\PagedList.Mvc.xml
