@@ -226,6 +226,10 @@
     <Compile Include="Migrations\202107061626097_ModelCustomerChange1.Designer.cs">
       <DependentUpon>202107061626097_ModelCustomerChange1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107070359132_RemoveTimeSlots.cs" />
+    <Compile Include="Migrations\202107070359132_RemoveTimeSlots.Designer.cs">
+      <DependentUpon>202107070359132_RemoveTimeSlots.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Court.cs" />
@@ -355,6 +359,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107061626097_ModelCustomerChange1.resx">
       <DependentUpon>202107061626097_ModelCustomerChange1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107070359132_RemoveTimeSlots.resx">
+      <DependentUpon>202107070359132_RemoveTimeSlots.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

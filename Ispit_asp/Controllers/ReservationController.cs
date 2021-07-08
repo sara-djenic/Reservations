@@ -1,4 +1,5 @@
 ﻿using Ispit_asp.Models;
+using Ispit_asp.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,13 +22,19 @@ namespace Ispit_asp.Controllers
             _context.Dispose();
         }
 
-        public ActionResult Reserve(int id)
+        public ActionResult Reserve()
         {
 
-            return View();
-        }
+            if (User.Identity.IsAuthenticated)
+            {
+                
+                return View();
+            }
 
-       
+
+            return RedirectToAction("Index", "Courts");
+
+        }
 
 
         // GET: Reservation

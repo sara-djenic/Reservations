@@ -4,8 +4,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Customers:</h2>
 
+<p>@Html.ActionLink("Create new customer", "Create", "Customer", null)</p>
+<h2>Customers:</h2>
 @if (!Model.Any())
 {
     <p>We don't have any customers yet.</p>

@@ -5,7 +5,7 @@
 }
 
 <h2>Courts:</h2>
-
+<p>@Html.ActionLink("Create reservation", "Reserve", "Reservation", null)</p>
 @if (!Model.Any())
 {
     <p>We don't have any courts yet.</p>
@@ -22,12 +22,11 @@ else
         <tbody>
             @foreach (var court in Model)
             {
-                <tr>
-                    <td>
-                        @Html.ActionLink(court.Name, "Reserve", "Reservation", new { id = court.CourtId }, null)
-                    </td>
-                    <td>@court.CourtType.Type</td>
-                </tr>
+            <tr>
+                <td>@court.Name </td>
+                <td>@court.CourtType.Type</td>
+                
+            </tr>
             }
         </tbody>
     </table>

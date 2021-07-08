@@ -10,5 +10,7 @@ namespace Ispit_asp.ViewModels
     {
         public Reservation Reservation { get; set; }
         public IEnumerable<Court> Courts{ get; set; }
+
+        
     }
 }
